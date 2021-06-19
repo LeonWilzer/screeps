@@ -7,7 +7,7 @@ var manageRole = {
 
         if(Object.keys(totalCreeps).length<10 && !Game.spawns['Spawn1'].spawning && Game.spawns['Spawn1'].spawnCreep([WORK, CARRY, MOVE], 'Worker1', { dryRun: true })){
             // Keeps Harvesters at 50%
-            if(Object.keys(totalCreeps).length==0 || (harvesters.length / object.keys(totalCreeps).length)<0.5) {
+            if(Object.keys(totalCreeps).length==0 || (harvesters.length / Object.keys(totalCreeps).length)<0.5) {
                 var newname = 'harvester' + game.time;
                 console.log('spawning new harvester: ' + newname);
                 game.spawns['spawn1'].spawncreep([WORK,CARRY,MOVE], newName, 
