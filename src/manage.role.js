@@ -18,7 +18,7 @@ var manageRole = {
 
         if(Object.keys(creepers).length<10){
             // Keeps Harvesters at 50%
-            if(!Game.spawns['Spawn1'].spawning && (harvesters.length / Object.keys(creepers).length)<0.5) {
+            if(!Game.spawns['Spawn1'].spawning && (harvesters.length / Object.keys(creepers).length)<0.5 || creepers.length==0) {
                 var newName = 'Harvester' + Game.time;
                 console.log('Spawning new harvester: ' + newName);
                 Game.spawns['Spawn1'].spawnCreep([WORK,CARRY,MOVE], newName, 
@@ -26,7 +26,7 @@ var manageRole = {
             }
 
             // Keeps Builders at 25%
-            if(!Game.spawns['Spawn1'].spawning && (builders.length / Object.keys(creepers).length)<0.25) {
+            if(!Game.spawns['Spawn1'].spawning && (builders.length / Object.keys(creepers).length)<0.25 || creepers.length==0) {
                 var newName = 'Builder' + Game.time;
                 console.log('Spawning new Builder: ' + newName);
                 Game.spawns['Spawn1'].spawnCreep([WORK,CARRY,MOVE], newName, 
@@ -34,7 +34,7 @@ var manageRole = {
             }
 
             // Keeps Upgraders at 25%
-            if(!Game.spawns['Spawn1'].spawning && (upgraders.length / Object.keys(creepers).length)<0.25) {
+            if(!Game.spawns['Spawn1'].spawning && (upgraders.length / Object.keys(creepers).length)<0.25 || creepers.length==0) {
                 var newName = 'Upgrader' + Game.time;
                 console.log('Spawning new Upgrader: ' + newName);
                 Game.spawns['Spawn1'].spawnCreep([WORK,CARRY,MOVE], newName, 
