@@ -9,7 +9,7 @@ var manageRole = {
             // Keeps Harvesters at 50%
             if(Object.keys(totalCreeps).length==0 || (harvesters.length / Object.keys(totalCreeps).length)<=0.5) {
                 var newName = 'harvester' + Game.time;
-                console.log('Spawning new Harvester: ' + newname);
+                console.log('Spawning new Harvester: ' + newName);
                 Game.spawns['Spawn1'].spawnCreep([WORK,CARRY,MOVE], newName, 
                 {memory: {role: 'harvester'}});
             } // Keeps Builders at 25%
