@@ -13,7 +13,6 @@ var manageBuildings = {
 
         for (let r in roomArr)
         {
-            Memory.visits = Array.from(Array(2), () => new Array(4));
             for(let x; x<50; x++)
             {
                 for(let y; y<50; y++)
