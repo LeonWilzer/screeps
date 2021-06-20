@@ -2,6 +2,7 @@ var roleHarvester = require('role.harvester');
 var roleUpgrader = require('role.upgrader');
 var roleBuilder = require('role.builder');
 var manageRole = require('manage.role');
+var manageBuildings = require('manage.buildings');
 
 module.exports.loop = function () {
 
@@ -54,4 +55,6 @@ module.exports.loop = function () {
             roleBuilder.run(creep);
         }
     }
+
+    manageBuildings.run();
 }
