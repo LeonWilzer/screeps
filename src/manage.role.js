@@ -35,7 +35,7 @@ var manageRole = {
                 var newName = 'Harvester' + Game.time;
                 console.log('Spawning new Harvester: ' + newName);
                 spawn.spawnCreep(creepConfig, newName, 
-                {memory: {role: 'harvester'}});
+                {memory: {role: 'harvester', state: 0}});
             } // Keeps Builders at 25%
             else if((builders.length / Object.keys(totalCreeps).length)<=0.25){
                 var newName = 'Builder' + Game.time;
