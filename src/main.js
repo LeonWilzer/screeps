@@ -2,7 +2,6 @@ var roleHarvester = require('role.harvester');
 var roleUpgrader = require('role.upgrader');
 var roleBuilder = require('role.builder');
 var manageRole = require('manage.role');
-//var manageBuildings = require('manage.buildings');
 
 module.exports.loop = function () {
 
@@ -60,6 +59,4 @@ module.exports.loop = function () {
         if(Math.random()<0.01)
             creep.room.createConstructionSite(creep.pos, STRUCTURE_ROAD);
     }
-
-    //manageBuildings.run();
 }
