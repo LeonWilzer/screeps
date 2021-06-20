@@ -7,7 +7,8 @@ var manageRole = {
 
         const spawn = Game.spawns['Spawn1'];
 
-        var energyBudget = spawn.GenergyCapacityAvailable;
+        //var energyBudget = spawn.GenergyCapacityAvailable;
+        var energyBudget = 550;
         var creepConfig = [];
         while(energyBudget>0)
         {
@@ -31,19 +32,19 @@ var manageRole = {
         if(Object.keys(totalCreeps).length<100 && !spawn.spawning && spawn.spawnCreep([WORK, WORK, CARRY, CARRY,MOVE, MOVE], 'Worker1', { dryRun: true })==0){
             // Keeps Harvesters at 50%
             if(Object.keys(totalCreeps).length==0 || (harvesters.length / Object.keys(totalCreeps).length)<=0.33) {
-                var newName = 'HarvesterMKIII' + Game.time;
+                var newName = 'Harvester' + Game.time;
                 console.log('Spawning new Harvester: ' + newName);
                 spawn.spawnCreep(creepConfig, newName, 
                 {memory: {role: 'harvester'}});
             } // Keeps Builders at 25%
             else if((builders.length / Object.keys(totalCreeps).length)<=0.33){
-                var newName = 'BuilderMKIII' + Game.time;
+                var newName = 'Builder' + Game.time;
                 console.log('Spawning new Builder: ' + newName);
                 spawn.spawnCreep(creepConfig, newName, 
                 {memory: {role: 'builder'}});        
             } // Keeps Upgraders at 25%
             else if((upgraders.length / Object.keys(totalCreeps).length)<=0.34) {
-                var newName = 'UpgraderMKIII' + Game.time;
+                var newName = 'Upgrader' + Game.time;
                 console.log('Spawning new Upgrader: ' + newName);
                 spawn.spawnCreep(creepConfig, newName, 
                 {memory: {role: 'upgrader'}});        

@@ -26,11 +26,6 @@ var roleBuilder = {
                 creep.moveTo(sources[1], {visualizePathStyle: {stroke: '#ffaa00'}});
             }
         }
-        
-        if(Math.random()>0.05)
-        {
-            creep.room.createConstructionSite(creep.pos, STRUCTURE_ROAD);
-        }
     }
 };
 
