@@ -57,7 +57,7 @@ module.exports.loop = function () {
                 break;
         }
         
-        if(Math.random()<0.05)
+        if(Math.random()<0.01)
             creep.room.createConstructionSite(creep.pos, STRUCTURE_ROAD);
     }
 
