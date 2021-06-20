@@ -41,13 +41,13 @@ var manageRole = {
                 var newName = 'Builder' + Game.time;
                 console.log('Spawning new Builder: ' + newName);
                 spawn.spawnCreep(creepConfig, newName, 
-                {memory: {role: 'builder'}});        
+                {memory: {role: 'builder', state: 0}});        
             } // Keeps Upgraders at 25%
             else if((upgraders.length / Object.keys(totalCreeps).length)<=0.25){
                 var newName = 'Upgrader' + Game.time;
                 console.log('Spawning new Upgrader: ' + newName);
                 spawn.spawnCreep(creepConfig, newName, 
-                {memory: {role: 'upgrader'}});        
+                {memory: {role: 'upgrader', state: 0}});        
             }
         }
     }
