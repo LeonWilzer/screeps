@@ -2,7 +2,7 @@ var roleHarvester = require('role.harvester');
 var roleUpgrader = require('role.upgrader');
 var roleBuilder = require('role.builder');
 var manageRole = require('manage.role');
-var manageBuildings = require('manage.buildings');
+//var manageBuildings = require('manage.buildings');
 
 module.exports.loop = function () {
 
@@ -45,16 +45,21 @@ module.exports.loop = function () {
     // Creep control
     for(var name in Game.creeps) {
         var creep = Game.creeps[name];
-        if(creep.memory.role == 'harvester') {
-            roleHarvester.run(creep);
+        switch(creep.memory.role) {
+            case 'harvester':
+                roleHarvester.run(creep);
+                break;
+            case 'upgrader':
+                roleUpgrader.run(creep);
+                break;
+            case 'builder':
+                roleBuilder.run(creep);
+                break;
         }
-        if(creep.memory.role == 'upgrader') {
-            roleUpgrader.run(creep);
-        }
-        if(creep.memory.role == 'builder') {
-            roleBuilder.run(creep);
-        }
+        
+        if(Math.random()<0.05)
+            creep.room.createConstructionSite(creep.pos, STRUCTURE_ROAD);
     }
 
-    manageBuildings.run();
+    //manageBuildings.run();
 }
