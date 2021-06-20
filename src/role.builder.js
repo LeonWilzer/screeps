@@ -14,7 +14,7 @@ var roleBuilder = {
 
         if(creep.memory.building) {
             var targets = creep.room.find(FIND_CONSTRUCTION_SITES);
-            var repairs = _.filter(creep.room.find(FIND_STRUCTURES), (struct) => (struct.hits/struct.hitsMax)<0 && !(struct instanceof StructureRoad));
+            var repairs = _.filter(creep.room.find(FIND_MY_STRUCTURES), (struct) => (struct.hits/struct.hitsMax)<0 && struct.structureType!=STRUCTURE_ROAD);
             if(repairs.length)
             {
                 if(creep.repair(repairs[0]) == ERR_NOT_IN_RANGE) {
