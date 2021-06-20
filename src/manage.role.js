@@ -10,19 +10,19 @@ var manageRole = {
         if(Object.keys(totalCreeps).length<100 && !Game.spawns['Spawn1'].spawning && Game.spawns['Spawn1'].spawnCreep([WORK, WORK, CARRY, CARRY,MOVE, MOVE], 'Worker1', { dryRun: true })==0){
             // Keeps Harvesters at 50%
             if(Object.keys(totalCreeps).length==0 || (harvesters.length / Object.keys(totalCreeps).length)<=0.33) {
-                var newName = 'harvester' + Game.time;
+                var newName = 'HarvesterMKIII' + Game.time;
                 console.log('Spawning new Harvester: ' + newName);
                 Game.spawns['Spawn1'].spawnCreep(creepConfig, newName, 
                 {memory: {role: 'harvester'}});
             } // Keeps Builders at 25%
             else if((builders.length / Object.keys(totalCreeps).length)<=0.33){
-                var newName = 'Builder' + Game.time;
+                var newName = 'BuilderMKIII' + Game.time;
                 console.log('Spawning new Builder: ' + newName);
                 Game.spawns['Spawn1'].spawnCreep(creepConfig, newName, 
                 {memory: {role: 'builder'}});        
             } // Keeps Upgraders at 25%
             else if((upgraders.length / Object.keys(totalCreeps).length)<=0.34) {
-                var newName = 'Upgrader' + Game.time;
+                var newName = 'UpgraderMKIII' + Game.time;
                 console.log('Spawning new Upgrader: ' + newName);
                 Game.spawns['Spawn1'].spawnCreep(creepConfig, newName, 
                 {memory: {role: 'upgrader'}});        
