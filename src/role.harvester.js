@@ -2,7 +2,7 @@ var roleHarvester = {
 
     /** @param {Creep} creep **/
     run: function(creep) {
-        if(creep.store.getUsedCapacity(RESOURCE_ENERGY) == 0) {
+        if(creep.store.getFreeCapacity() > 0) {
             var sources = creep.room.find(FIND_SOURCES);
             var tombs = creep.room.find(FIND_TOMBSTONES);
             if(tombs.length > 0 && creep.withdraw(tombs[0],RESOURCE_ENERGY == ERR_NOT_IN_RANGE))
