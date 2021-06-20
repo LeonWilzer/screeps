@@ -5,9 +5,10 @@ var roleHarvester = {
         if(creep.store.getFreeCapacity() > 0) {
             var sources = creep.room.find(FIND_SOURCES);
             var tombs = creep.room.find(FIND_TOMBSTONES);
-            if(creep.harvest(sources[0]) == ERR_NOT_IN_RANGE) {
-                creep.moveTo(sources[0], {visualizePathStyle: {stroke: '#ffaa00'}});
-            }
+            if(creep.withdraw(tombs[0],RESOURCE_ENERGY == ERR_NOT_IN_RANGE))
+                creep.moveTo(tombs[0], {visualizePathStyle: {stroke: '#5ec283'}});
+            else if(creep.harvest(sources[0]) == ERR_NOT_IN_RANGE)
+                creep.moveTo(sources[0], {visualizePathStyle: {stroke: '#5ec283'}});
         }
         else {
             var targets = creep.room.find(FIND_STRUCTURES, {
@@ -20,7 +21,7 @@ var roleHarvester = {
             });
             if(targets.length > 0) {
                 if(creep.transfer(targets[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-                    creep.moveTo(targets[0], {visualizePathStyle: {stroke: '#ffffff'}});
+                    creep.moveTo(targets[0], {visualizePathStyle: {stroke: '#d9eddf'}});
                 }
             }
         }
