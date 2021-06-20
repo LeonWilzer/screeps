@@ -5,7 +5,7 @@ var manageRole = {
         var builders = _.filter(Game.creeps, (creep) => creep.memory.role == 'builder');
         var upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader');
 
-        const spawn = spawn;
+        const spawn = Game.spawns['Spawn1'];
 
         var energyBudget = spawn.GenergyCapacityAvailable;
         var creepConfig = [];
