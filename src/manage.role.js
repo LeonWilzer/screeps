@@ -8,7 +8,9 @@ var manageRole = {
         const spawn = Game.spawns['Spawn1'];
 
         //var energyBudget = spawn.GenergyCapacityAvailable;
-        var energyBudget = 550;
+        var energyBudget = 300;
+        if(Object.keys(totalCreeps).length<1)
+            energyBudget = 300;
         var creepConfig = [];
         while(energyBudget>0)
         {
