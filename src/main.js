@@ -2,9 +2,12 @@ var roleHarvester = require('role.harvester');
 var roleUpgrader = require('role.upgrader');
 var roleBuilder = require('role.builder');
 var roleMaintainer = require('role.maintainer');
+var roleWarrior = require('role.warrior');
 var manageRole = require('manage.role');
 
 module.exports.loop = function () {
+
+    const spawn = Game.spawns['Spawn1'];
 
     // Clears creep memory
     for(var name in Memory.creeps) {
@@ -17,12 +20,12 @@ module.exports.loop = function () {
     manageRole.run(creep);
 
     // Display spawing status
-    if(Game.spawns['Spawn1'].spawning) { 
-        var spawningCreep = Game.creeps[Game.spawns['Spawn1'].spawning.name];
-        Game.spawns['Spawn1'].room.visual.text(
+    if(spawn.spawning) { 
+        var spawningCreep = Game.creeps[spawn.spawning.name];
+        spawn.room.visual.text(
             '🛠️' + spawningCreep.memory.role,
-            Game.spawns['Spawn1'].pos.x + 1, 
-            Game.spawns['Spawn1'].pos.y, 
+            spawn.pos.x + 1, 
+            spawn.pos.y, 
             {align: 'left', opacity: 0.8});
     }
 
@@ -57,6 +60,9 @@ module.exports.loop = function () {
                 break;
             case 'maintainer':
                 roleMaintainer.run(creep);
+                break;
+            case 'warrior':
+                roleWarrior.run(creep);
                 break;
         }
         
